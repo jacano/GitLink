@@ -19,8 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
-Project("{FF286327-C783-4F7A-AB73-9BCBAD0D4460}") = "GitLink.NuGet", "GitLink.NuGet\GitLink.NuGet.nuproj", "{29E78909-B7FB-472C-A9A0-1749A8BE9A9A}"
-EndProject
+#Project("{FF286327-C783-4F7A-AB73-9BCBAD0D4460}") = "GitLink.NuGet", "GitLink.NuGet\GitLink.NuGet.nuproj", "{29E78909-B7FB-472C-A9A0-1749A8BE9A9A}"
+#EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

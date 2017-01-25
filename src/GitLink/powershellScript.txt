@@ -1,0 +1,1 @@
+﻿powershell invoke-command -scriptblock {param($url='%RAWURL%', $output='%TRGFILE%');$encodedCreds = [System.Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes(\":$($env:VSOTOKEN)\"));$headers = @{ Authorization = \"Basic $encodedCreds\" };$webpage = Invoke-WebRequest -Uri $url -Headers $headers;[io.file]::WriteAllBytes($output, $webpage.Content);}

@@ -35,9 +35,16 @@ namespace GitLink.Pdb
                     sw.WriteLine("RAWURL={0}", CreateTarget(rawUrl, revision));
                     if (downloadWithPowershell)
                     {
+                        var powershellScript = "powershell invoke-command -scriptblock {param($url='%RAWURL%', $output='%TRGFILE%'); (New-Object System.Net.WebClient).DownloadFile($url, $output)}";
+                        var powershellFilename = "powershellScript.txt";
+                        if (File.Exists(powershellFilename))
+                        {
+                            powershellScript = File.ReadAllText(powershellFilename);
+                        }
+
                         sw.WriteLine("TRGFILE=%fnbksl%(%targ%%var2%)");
                         sw.WriteLine("SRCSRVTRG=%TRGFILE%");
-                        sw.WriteLine("SRCSRVCMD=powershell invoke-command -scriptblock {param($url='%RAWURL%', $output='%TRGFILE%'); (New-Object System.Net.WebClient).DownloadFile($url, $output)}");
+                        sw.WriteLine($"SRCSRVCMD={powershellScript}");
                     }
                     else
                     {
