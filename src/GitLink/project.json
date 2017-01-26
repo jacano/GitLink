@@ -1,10 +1,12 @@
 ﻿{
   "dependencies": {
     "Catel.Core": "4.5.3",
+    "Costura.Fody": "1.3.3",
     "EnlistmentInfo": {
       "version": "1.0.4",
       "suppressParent": "none"
     },
+    "Fody": "1.29.4",
     "GitTools.Core": "1.0.0-unstable0021",
     "GitVersionTask": "4.0.0-beta0009",
     "ImpromptuInterface": "6.2.2",

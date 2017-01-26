@@ -1,0 +1,1 @@
+﻿powershell invoke-command -scriptblock {param($url='%RAWURL%', $output='%TRGFILE%');$encodedCreds = [System.Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes(\":$($env:VSOTOKEN)\"));$downloader = new-object System.Net.WebClient;$downloader.Headers.add('Authorization',\"Basic $encodedCreds\");$downloader.DownloadFile($url, $output);}
